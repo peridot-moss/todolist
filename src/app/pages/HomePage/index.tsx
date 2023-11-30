@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
 import TodoInput from 'app/components/Todoinput';
+import TodoIthem from 'app/components/TodoIthem';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,15 +28,6 @@ const Title = styled.h1`
 
 const TodoList = styled.div``;
 
-const TodoIthem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 15px 25px;
-  width: 100%
-  font-size: 1.2em;
-  border-bottom: 1px solid #eee;
-`;
-
 const TodoCheck = styled.input`
   margin-right: 15px;
 `;
@@ -52,10 +44,30 @@ export function HomePage() {
           <Title>할 일</Title>
           <TodoInput />
           <TodoList>
-            <TodoIthem>
-              <TodoCheck type="checkbox" />
-              Todo app 만들기
-            </TodoIthem>
+            <TodoIthem
+              todo={{
+                id: '1',
+                completed: false,
+                content: '투두 입니다 1',
+                editing: false,
+              }}
+            ></TodoIthem>
+            <TodoIthem
+              todo={{
+                id: '2',
+                completed: true,
+                content: '투두 입니다2',
+                editing: false,
+              }}
+            ></TodoIthem>
+            <TodoIthem
+              todo={{
+                id: '3',
+                completed: true,
+                content: '투두 입니다 3',
+                editing: false,
+              }}
+            ></TodoIthem>
           </TodoList>
         </Box>
       </Wrapper>
